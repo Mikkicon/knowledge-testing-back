@@ -1,5 +1,3 @@
-"use strict";
-
 var mysql = require("mysql");
 var con = null;
 
@@ -40,7 +38,6 @@ async function initDB({ user: user, password: password, db: db }) {
     );
   }
 }
-
 function getUsers(callback) {
   let sql = "SELECT login, mail FROM users";
   con.query(sql, (err, res) => {
@@ -123,8 +120,8 @@ function login({ mail: mail, pass: pass }, callback) {
   con.query(`SELECT * FROM users WHERE mail = ?`, mail, (err, res) => {
     if (res && res.length) {
       console.log("Found user: ", res[0]);
-      if (pass === res[0].password) {
-        console.log("Correct pass");
+      if (bcrypt.compareSync(res[0].password, pass)) {
+        console.log("Correct pass: ", pass);
         callback(null, res[0]);
       } else {
         console.log("Incorrect pass.");
@@ -137,10 +134,10 @@ function login({ mail: mail, pass: pass }, callback) {
 }
 
 module.exports = {
-  initDB,
   getUsers,
   getUser,
   addUser,
   removeUser,
-  login
+  login,
+  initDB
 };
