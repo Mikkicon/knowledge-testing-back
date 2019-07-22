@@ -47,22 +47,26 @@ function getUsers(callback) {
   });
 }
 
-function isUserInDB(id) {
+function isUserInDB(mail) {
+  console.log("Mail in isUserInDB: ", mail);
+
   return new Promise((resolve, reject) => {
-    con.query(
-      `SELECT login, mail FROM users WHERE  login = '${id}'`,
-      (err, res) => {
-        if (err) return reject(err);
-        resolve(res && res.length);
+    con.query(`SELECT mail FROM users WHERE mail = '${mail}'`, (err, res) => {
+      if (err) {
+        reject(err);
+      } else if (res && res.length) {
+        resolve(true);
+      } else {
+        resolve(false);
       }
-    );
+    });
   });
 }
 
-async function getUser(login, callback) {
-  const sql = `SELECT login, mail FROM users WHERE login='${login}'`;
+async function getUser(mail, callback) {
+  const sql = `SELECT login, mail, password FROM users WHERE mail='${mail}'`;
   try {
-    const isIn = await isUserInDB(login);
+    const isIn = await isUserInDB(mail);
     if (isIn) {
       con.query(sql, (err, result) => {
         if (err) callback(err, null);
@@ -75,29 +79,24 @@ async function getUser(login, callback) {
     console.log(e);
   }
 }
+function addUser({ login: login, mail: mail, password: password }) {
+  return new Promise(async (resolve, reject) => {
+    const sql = `INSERT INTO users SET ?`;
+    const isIn = await isUserInDB(mail);
 
-async function addUser(
-  { login: login, mail: mail, password: password },
-  callback
-) {
-  const sql = `INSERT INTO users SET ?`;
-  try {
-    const isIn = await isUserInDB(login);
     if (isIn) {
-      callback(`Login ${login} is already occupied.`, null);
+      reject(`Login ${login} is already occupied.`);
     } else {
       con.query(sql, { login, mail, password }, (err, res) => {
         if (err) {
-          callback(err, null);
+          reject(err);
         } else {
           console.log("[ addUser ] Success: ", res);
-          callback(null, res);
+          resolve(res);
         }
       });
     }
-  } catch (e) {
-    console.log(e);
-  }
+  });
 }
 
 function removeUser(login, callback) {
@@ -132,12 +131,25 @@ function login({ mail: mail, pass: pass }, callback) {
     }
   });
 }
-
+function getUserByMail(id) {
+  return new Promise((resolve, reject) => {
+    getUser(id, (err, result) => {
+      if (err) {
+        console.log(err);
+        reject(err);
+      } else {
+        resolve(result);
+      }
+    });
+  });
+}
 module.exports = {
   getUsers,
   getUser,
   addUser,
   removeUser,
   login,
-  initDB
+  initDB,
+  isUserInDB,
+  getUserByMail
 };

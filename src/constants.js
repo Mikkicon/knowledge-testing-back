@@ -1,4 +1,6 @@
 module.exports = {
+  TESTNET: false,
   PORT: 3000,
-  ERROR_MESG: "Error."
+  MAIL_REGISTER_SUBJECT: "Password for Unitest",
+  TOKEN_PRIVATE_KEY: "wuewieuwieuriwudjghhhhuuwi"
 };

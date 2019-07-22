@@ -2,7 +2,11 @@
 
 const { cors, express, bodyParser } = require("./utils/modulesManager");
 const { getTests, getTestById } = require("./modules/services/tests.service");
-const { getUserById } = require("./modules/services/auth.service");
+const {
+  getUserById,
+  registerUser,
+  loginUser
+} = require("./modules/services/auth.service");
 const { initDB } = require("./utils/db.util");
 const { PORT } = require("./constants");
 const app = express();
@@ -42,40 +46,18 @@ app.get("/users/", async (req, res) => {
   });
 });
 
-app.post("/email", function(req, res) {
-  var transporter = nodemailer.createTransport({
-    host: "smtp.gmail.com",
-    port: 465,
-    secure: true,
-    auth: {
-      user: "unitestsbot@gmail.com",
-      pass: "uniTestRootBeer"
-    }
-  });
-
-  var mailOptions = {
-    from: "unitestsbot@gmail.com",
-    to: [req.body.to],
-    subject: "Welcome on UniTest!",
-    text: "Thank you."
-  };
-  transporter.sendMail(mailOptions, function(error, info) {
-    if (error) {
-      console.log("This is undefined: ", error);
-    } else {
-      console.log(info);
-      res.send("success!");
-    }
-  });
-});
-
 app.post("/login", async (req, res) => {
-  // let result = await login(req.body);
-  // if (!result) {
-  //   res.status(400).send("err");
-  // } else {
-  //   res.status(200).send(result);
-  // }
+  try {
+    let result = await loginUser(req.body);
+    console.log(result);
+    if (result) {
+      res.status(200).send(JSON.stringify({ token: result }));
+    } else {
+      res.status(400).send("Wrong credentials");
+    }
+  } catch (error) {
+    res.status(400).send("err");
+  }
 });
 app.post("/tests", (req, res) => {
   console.log(req.body);
@@ -100,14 +82,13 @@ app.get("/tests/:id", async (req, res) => {
 });
 
 app.post("/register", async (req, res) => {
-  // let result = await addUser(req.body);
-  // if (!result) {
-  //   console.log("ERROR");
-  //   res.status(400).send("err");
-  // } else {
-  //   console.log("NO ERROR");
-  //   res.status(200).send(result);
-  // }
+  try {
+    let result = await registerUser(req.body.mail);
+    console.log(result);
+    result ? res.status(200).send(result) : res.status(400).send("err");
+  } catch (error) {
+    res.status(400).send("err");
+  }
 });
 
 app.post("/user/:login", (req, res) => {
