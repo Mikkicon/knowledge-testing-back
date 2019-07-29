@@ -16,13 +16,21 @@ async function initDB({ user: user, password: password, db: db }) {
       if (err) throw err;
     });
     con.query(
-      "CREATE TABLE IF NOT EXISTS users (login VARCHAR(255) PRIMARY KEY, mail VARCHAR(255), password VARCHAR(512))",
+      "CREATE TABLE IF NOT EXISTS users ( \
+         login VARCHAR(255) NOT NULL, \
+          mail VARCHAR(255) NOT NULL PRIMARY KEY, \
+           password VARCHAR(512) NOT NULL)",
       (err, res) => {
         if (err) throw err;
       }
     );
     con.query(
-      "CREATE TABLE IF NOT EXISTS tests (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255))",
+      "CREATE TABLE IF NOT EXISTS users_tests ( \
+        user_mail VARCHAR(255) NOT NULL, \
+        test_Id INT NOT NULL, \
+        score INT NOT NULL, \
+        time INT NOT NULL, \
+      FOREIGN KEY mail(user_mail) REFERENCES users(mail) ON DELETE CASCADE)",
       (err, res) => {
         if (err) throw err;
       }
@@ -99,6 +107,47 @@ function addUser({ login: login, mail: mail, password: password }) {
   });
 }
 
+function addUserTest(user_mail, test_Id, score, time) {
+  const sql = `INSERT INTO users_tests SET ?`;
+  return new Promise((resolve, reject) => {
+    con.query(sql, { user_mail, test_Id, score, time }, (err, res) => {
+      if (err) {
+        reject(err);
+      } else {
+        console.log("[ addUserTest ] Success: ", res);
+        resolve(res);
+      }
+    });
+  });
+}
+
+function getUserTests(user_mail) {
+  const sql = `SELECT test_Id, score FROM users_tests WHERE user_mail= '${user_mail}'`;
+  return new Promise((resolve, reject) => {
+    con.query(sql, (err, res) => {
+      if (err) {
+        reject(err);
+      } else {
+        console.log("[ getUserTests ] Success: ", res);
+        resolve(res);
+      }
+    });
+  });
+}
+
+function updateUser(mail, options) {
+  if (!mail || !Object.keys(options).length) return false;
+  let sql = `UPDATE users SET `;
+  if ("mail" in options) sql += `mail = ${options["mail"]}, `;
+  if ("password" in options) sql += `password = ${options["password"]} `;
+  sql += `WHERE mail = ${mail}`;
+  return new Promise((resolve, reject) => {
+    con.query(sql, (err, res) => {
+      if (err) reject(err);
+      resolve(res);
+    });
+  });
+}
 function removeUser(login, callback) {
   con.query(`SELECT * FROM users WHERE login = ?`, login, (err, res) => {
     if (err) callback(err, null);
@@ -151,5 +200,8 @@ module.exports = {
   login,
   initDB,
   isUserInDB,
-  getUserByMail
+  getUserByMail,
+  updateUser,
+  addUserTest,
+  getUserTests
 };

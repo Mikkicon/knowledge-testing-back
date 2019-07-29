@@ -1,4 +1,9 @@
-const { getUserByMail, addUser } = require("../../utils/db.util");
+const {
+  getUserByMail,
+  addUser,
+  updateUser,
+  getUserTests
+} = require("../../utils/db.util");
 const { MAIL_REGISTER_SUBJECT, TOKEN_PRIVATE_KEY } = require("../../constants");
 const { nodemailer, bcrypt, jwt } = require("../../utils/modulesManager");
 var transporter = nodemailer.createTransport({
@@ -34,7 +39,7 @@ async function loginUser({ mail, pass }) {
     if (isAuth) {
       console.log("ISAUTH: ", isAuth);
       var token = jwt.sign({ userMail: mail }, TOKEN_PRIVATE_KEY);
-      return token;
+      return mail, token;
     } else {
       console.log("No such user in DB");
       return false;
@@ -89,10 +94,42 @@ function sendMail(mailOptions) {
   });
 }
 
+function validateCredentials(body) {
+  let { mail, pass, oldpass } = body;
+  return oldpass && ((mail && isStringEmail(mail)) || pass);
+}
+
+async function changeCredentials(oldMail, body) {
+  let { mail, pass, oldpass } = body;
+  let updateParams = {};
+  if (validateCredentials(body)) {
+    let isAuth = await isAuthorized(oldMail, oldpass);
+    if (!isAuth) return false;
+    if (mail) updateParams["mail"] = mail;
+    if (pass) updateParams["pass"] = pass;
+    let result = await updateUser(oldMail, updateParams);
+    return result;
+  } else {
+    return "Error";
+  }
+}
+
+async function getFullUserInfo(token) {
+  const verifiedToken = jwt.verify(token, TOKEN_PRIVATE_KEY);
+  console.log(verifiedToken);
+  if (typeof verifiedToken === "object") {
+    const userInfo = await getUserTests(verifiedToken.userMail);
+    return userInfo;
+  }
+  return "JWT wasn't verified";
+}
+
 module.exports = {
   getUserByMail,
   loginUser,
   registerUser,
   transporter,
-  mailOptions
+  mailOptions,
+  changeCredentials,
+  getFullUserInfo
 };
