@@ -4,7 +4,11 @@ const {
   updateUser,
   getUserTests
 } = require("../../utils/db.util");
-const { MAIL_REGISTER_SUBJECT, TOKEN_PRIVATE_KEY } = require("../../constants");
+const {
+  MAIL_REGISTER_SUBJECT,
+  TOKEN_PRIVATE_KEY,
+  SEND_MAILS
+} = require("../../constants");
 const { nodemailer, bcrypt, jwt } = require("../../utils/modulesManager");
 var transporter = nodemailer.createTransport({
   host: "smtp.gmail.com",
@@ -51,8 +55,12 @@ async function loginUser({ mail, pass }) {
 
 function isStringEmail(string) {
   let at = string.indexOf("@");
+  let dot = string.indexOf(".", at);
   return (
-    at && string.substring(at).length > 3 && string.substring(0, at).length > 0
+    ~at &&
+    ~dot &&
+    string.substring(at).length > 3 &&
+    string.substring(0, at).length > 0
   );
 }
 
@@ -63,6 +71,7 @@ async function registerUser(email) {
   mailOptions.to = email;
   mailOptions.subject = MAIL_REGISTER_SUBJECT;
   mailOptions.text = userPassword;
+  if (!isStringEmail(email)) return "Please provide a valid e-mail";
   let login = email.slice(0, email.indexOf("@") || email);
   try {
     let isUserAdded = await addUser({
@@ -70,7 +79,7 @@ async function registerUser(email) {
       mail: email,
       password: userPassword
     });
-    let isMailSent = isStringEmail(email) && (await sendMail(mailOptions));
+    let isMailSent = SEND_MAILS && (await sendMail(mailOptions));
     console.log("Registring...");
     let result = isUserAdded && isMailSent;
     return result;
@@ -95,16 +104,18 @@ function sendMail(mailOptions) {
 }
 
 function validateCredentials(body) {
-  let { mail, pass, oldpass } = body;
-  return oldpass && ((mail && isStringEmail(mail)) || pass);
+  let { mail, pass, oldPass } = body;
+  return oldPass && ((mail && isStringEmail(mail)) || pass);
 }
 
-async function changeCredentials(oldMail, body) {
-  let { mail, pass, oldpass } = body;
+async function changeCredentials(token, body) {
+  let { login, mail, pass, oldPass } = body;
   let updateParams = {};
+  const oldMail = jwt.verify(token, TOKEN_PRIVATE_KEY).userMail;
   if (validateCredentials(body)) {
-    let isAuth = await isAuthorized(oldMail, oldpass);
+    let isAuth = await isAuthorized(oldMail, oldPass);
     if (!isAuth) return false;
+    if (login) updateParams["login"] = login;
     if (mail) updateParams["mail"] = mail;
     if (pass) updateParams["pass"] = pass;
     let result = await updateUser(oldMail, updateParams);

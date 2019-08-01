@@ -17,8 +17,9 @@ async function initDB({ user: user, password: password, db: db }) {
     });
     con.query(
       "CREATE TABLE IF NOT EXISTS users ( \
+        id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,\
          login VARCHAR(255) NOT NULL, \
-          mail VARCHAR(255) NOT NULL PRIMARY KEY, \
+          mail VARCHAR(255) NOT NULL, \
            password VARCHAR(512) NOT NULL)",
       (err, res) => {
         if (err) throw err;
@@ -26,11 +27,12 @@ async function initDB({ user: user, password: password, db: db }) {
     );
     con.query(
       "CREATE TABLE IF NOT EXISTS users_tests ( \
-        user_mail VARCHAR(255) NOT NULL, \
+        user_id INT NOT NULL, \
         test_Id INT NOT NULL, \
         score INT NOT NULL, \
         time INT NOT NULL, \
-      FOREIGN KEY mail(user_mail) REFERENCES users(mail) ON DELETE CASCADE)",
+      FOREIGN KEY id(user_id) REFERENCES users(id) \
+       ON DELETE CASCADE ON UPDATE CASCADE)",
       (err, res) => {
         if (err) throw err;
       }
@@ -47,7 +49,7 @@ async function initDB({ user: user, password: password, db: db }) {
   }
 }
 function getUsers(callback) {
-  let sql = "SELECT login, mail FROM users";
+  let sql = "SELECT id,login, mail FROM users";
   con.query(sql, (err, res) => {
     if (err) callback(err, null);
     console.log("In 'getUsers()', result: ", res);
@@ -72,7 +74,7 @@ function isUserInDB(mail) {
 }
 
 async function getUser(mail, callback) {
-  const sql = `SELECT login, mail, password FROM users WHERE mail='${mail}'`;
+  const sql = `SELECT id, login, mail, password FROM users WHERE mail='${mail}'`;
   try {
     const isIn = await isUserInDB(mail);
     if (isIn) {
@@ -107,10 +109,12 @@ function addUser({ login: login, mail: mail, password: password }) {
   });
 }
 
-function addUserTest(user_mail, test_Id, score, time) {
+async function addUserTest(user_mail, test_Id, score, time) {
+  const [user] = await getUserByMail(user_mail);
+  const user_id = user.id;
   const sql = `INSERT INTO users_tests SET ?`;
   return new Promise((resolve, reject) => {
-    con.query(sql, { user_mail, test_Id, score, time }, (err, res) => {
+    con.query(sql, { user_id, test_Id, score, time }, (err, res) => {
       if (err) {
         reject(err);
       } else {
@@ -121,8 +125,10 @@ function addUserTest(user_mail, test_Id, score, time) {
   });
 }
 
-function getUserTests(user_mail) {
-  const sql = `SELECT test_Id, score FROM users_tests WHERE user_mail= '${user_mail}'`;
+async function getUserTests(user_mail) {
+  const [user] = await getUserByMail(user_mail);
+  const user_id = user.id;
+  const sql = `SELECT test_Id, score FROM users_tests WHERE user_id= '${user_id}'`;
   return new Promise((resolve, reject) => {
     con.query(sql, (err, res) => {
       if (err) {
@@ -138,9 +144,12 @@ function getUserTests(user_mail) {
 function updateUser(mail, options) {
   if (!mail || !Object.keys(options).length) return false;
   let sql = `UPDATE users SET `;
-  if ("mail" in options) sql += `mail = ${options["mail"]}, `;
-  if ("password" in options) sql += `password = ${options["password"]} `;
-  sql += `WHERE mail = ${mail}`;
+  if ("login" in options) sql += ` login = "${options["login"]}" `;
+  if ("login" in options && "mail" in options) sql += ` , `;
+  if ("mail" in options) sql += ` mail = "${options["mail"]}" `;
+  if ("mail" in options && "pass" in options) sql += ` , `;
+  if ("pass" in options) sql += ` password = "${options["pass"]}" `;
+  sql += `WHERE mail = "${mail}"`;
   return new Promise((resolve, reject) => {
     con.query(sql, (err, res) => {
       if (err) reject(err);

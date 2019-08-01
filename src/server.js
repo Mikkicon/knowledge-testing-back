@@ -3,12 +3,14 @@
 const { cors, express, bodyParser } = require("./utils/modulesManager");
 const {
   getTests,
-  checkTestAnswers
+  checkTestAnswers,
+  getTestById
 } = require("./modules/services/tests.service");
 const {
   registerUser,
   loginUser,
-  getFullUserInfo
+  getFullUserInfo,
+  changeCredentials
 } = require("./modules/services/auth.service");
 const { initDB } = require("./utils/db.util");
 const { PORT } = require("./constants");
@@ -25,6 +27,17 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // app.all("/users/:id", isAuthorised);
 
 // ----------------USER----------------
+app.get("/users/", async (req, res) => {
+  console.log('app.get("/users/"');
+  getUsers((err, result) => {
+    if (err) {
+      res.status(400).send(err);
+    } else {
+      res.status(200).send(result);
+    }
+  });
+});
+
 app.post("/users/", async (req, res) => {
   console.log('app.get("/users/:id", (req, res) => {');
 
@@ -36,20 +49,19 @@ app.post("/users/", async (req, res) => {
     res.status(400).send("err");
   }
 });
+app.put("/users/", async (req, res) => {
+  console.log('app.put("/users/:id", (req, res) => {');
 
+  try {
+    let result = await changeCredentials(req.body.token, req.body);
+    console.log(result);
+    res.status(200).send(result);
+  } catch (error) {
+    res.status(400).send("err");
+  }
+});
 app.delete("/users/:id", (req, res) => {
   removeUser(req.params.id, (err, result) => {
-    if (err) {
-      res.status(400).send(err);
-    } else {
-      res.status(200).send(result);
-    }
-  });
-});
-
-app.get("/users/", async (req, res) => {
-  console.log('app.get("/users/"');
-  getUsers((err, result) => {
     if (err) {
       res.status(400).send(err);
     } else {
@@ -104,6 +116,11 @@ app.post("/tests/:id", async (req, res) => {
   } catch (error) {
     res.status(400).send("Error");
   }
+});
+
+app.post("/tests", async (req, res) => {
+  console.log('app.post("/tests"', req.body);
+  res.status(200).send("OK");
 });
 
 app.get("/tests", async (req, res) => {
