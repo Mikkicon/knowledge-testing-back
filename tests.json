@@ -3,180 +3,130 @@
     "id": 0,
     "title": "JavaScript",
     "questions": [
-      "What is closure?",
-      "What is better func expression or func declaration?",
-      "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-      "Repellat accusantium non vel voluptatibus facere nihil eos!",
-      "Repellat accusantium non vel voluptatibus modi qui quos quisquam aspernatur deleniti saepe eum quod!"
+      "Inside which HTML element do we put the JavaScript?",
+      "What is the correct JavaScript syntax to change the content of the HTML element below? \n <p id=\"demo\">This is a demonstration.</p>",
+      "Where is the correct place to insert a JavaScript?",
+      "What is the correct syntax for referring to an external script called \"xxx.js\"?",
+      "How do you write \"Hello World\" in an alert box?"
     ],
     "answers": [
+      ["<javascript/>", "<script/>", "<js/>", "<scripting/>"],
       [
-        "A closure is the combination of a function and the lexical environment within which that function was declared.",
-        "A closure is the combination of a function and the lexical environment within which that function was declared.",
-        "A closure is the combination of a function and the lexical environment within which that function was declared.",
-        "A closure is the combination of a function and the lexical environment within which that function was declared."
+        " document.getElement(\"p\").innerHTML = \"Hello World!\";",
+        " document.getElementById(\"demo\").innerHTML = \"Hello World!\";",
+        " #demo.innerHTML = \"Hello World!\";",
+        " document.getElementByName(\"p\").innerHTML = \"Hello World!\";"
       ],
       [
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!"
+        " The <body> section",
+        " Both the <head> section and the <body> section are correct",
+        " The <head> section",
+        "None above"
       ],
       [
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!"
+        " <script name=\"xxx.js\">",
+        " <script src=\"xxx.js\">",
+        " <script href=\"xxx.js\">",
+        " <script file=\"xxx.js\">"
       ],
       [
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!"
-      ],
-      [
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!"
+        " msg(\"Hello World\");",
+        " alert(\"Hello World\");",
+        " msgBox(\"Hello World\");",
+        " alertBox(\"Hello World\");"
       ]
     ],
-    "correct": [0, 1, 0, 2, 3],
+    "correct": [1, 1, 1, 1, 1],
     "hardness": 0
   },
   {
     "id": 1,
     "title": "C++",
     "questions": [
-      "What is closure?",
-      "What is better func expression or func declaration?",
-      "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-      "Repellat accusantium non vel voluptatibus facere nihil eos!",
-      "Repellat accusantium non vel voluptatibus modi qui quos quisquam aspernatur deleniti saepe eum quod!"
+      "Which is the storage specifier used to modify the member variable even though the class object is a constant object?",
+      "Objects created using new operator are stored in __ memory.",
+      "With respective to streams >> (operator) is called as",
+      "I) Exception handling technically provides multi branching.\n II) Exception handling can be mimicked using ‘goto’ construct.",
+      "Identify the C++ compiler of Linux"
     ],
     "answers": [
+      ["auto", "register", "static", "mutable"],
+      ["Cache", "Heap", "Stack", "None above"],
       [
-        "A closure is the combination of a function and the lexical environment within which that function was declared.",
-        "A closure is the combination of a function and the lexical environment within which that function was declared.",
-        "A closure is the combination of a function and the lexical environment within which that function was declared.",
-        "A closure is the combination of a function and the lexical environment within which that function was declared."
+        "Insertion operator",
+        "Extraction  operator",
+        "Right shift  operator",
+        "Left shift  operator"
       ],
-      [
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!"
-      ],
-      [
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!"
-      ],
-      [
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!"
-      ],
-      [
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!"
-      ]
+      ["I", "II", "Both", "None"],
+      ["cpp", "g++", "Borland", "vc++"]
     ],
-    "correct": [0, 1, 0, 2, 3],
+    "correct": [3, 1, 1, 0, 1],
     "hardness": 1
   },
   {
     "id": 2,
     "title": "C#",
     "questions": [
-      "What is closure?",
-      "What is better func expression or func declaration?",
-      "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-      "Repellat accusantium non vel voluptatibus facere nihil eos!",
-      "Repellat accusantium non vel voluptatibus modi qui quos quisquam aspernatur deleniti saepe eum quod!"
+      "Which of the following is correct about variable naming conventions in C#?",
+      "Which of the following defines boxing correctly?",
+      "Which of the following converts a type to a 64-bit integer in C#?",
+      "Which of the following converts a type to an unsigned big type in C#?",
+      "Which of the following access specifier in C# allows a class to expose its member variables and member functions to other functions and objects?"
     ],
     "answers": [
       [
-        "A closure is the combination of a function and the lexical environment within which that function was declared.",
-        "A closure is the combination of a function and the lexical environment within which that function was declared.",
-        "A closure is the combination of a function and the lexical environment within which that function was declared.",
-        "A closure is the combination of a function and the lexical environment within which that function was declared."
+        "It should not be a C# keyword.",
+        "It must not contain any embedded space or symbol such as? - + ! @ # % ^ & * ( ) [ ] { } ",
+        "Both of the above. ",
+        "None of the above."
       ],
       [
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!"
+        "When a value type is converted to object type, it is called boxing.",
+        "When an object type is converted to a value type, it is called boxing.",
+        "Both of the above. ",
+        "None of the above. "
       ],
-      [
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!"
-      ],
-      [
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!"
-      ],
-      [
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!"
-      ]
+      ["ToInt64", "ToSbyte ", "ToSingle ", "ToInt32 "],
+      ["ToType", "ToUInt16 ", "ToUInt32", "ToUInt64 "],
+      ["Public", "Private", "Protected", "Internal"]
     ],
-    "correct": [0, 1, 0, 2, 3],
-    "hardness": 0
+    "correct": [2, 0, 0, 3, 0],
+    "hardness": 1
   },
   {
     "id": 3,
     "title": "Java",
     "questions": [
-      "What is closure?",
-      "What is better func expression or func declaration?",
-      "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-      "Repellat accusantium non vel voluptatibus facere nihil eos!",
-      "Repellat accusantium non vel voluptatibus modi qui quos quisquam aspernatur deleniti saepe eum quod!"
+      "What is the default value of float variable?",
+      "Which of the following is false about String?",
+      "What is local variable?",
+      "Dynamic binding uses which information for binding?",
+      "What is Serialization?"
     ],
     "answers": [
+      ["0.0d", "0.0f", "0", "not defined"],
       [
-        "A closure is the combination of a function and the lexical environment within which that function was declared.",
-        "A closure is the combination of a function and the lexical environment within which that function was declared.",
-        "A closure is the combination of a function and the lexical environment within which that function was declared.",
-        "A closure is the combination of a function and the lexical environment within which that function was declared."
+        "String is immutable.",
+        "String can be created using new operator.",
+        "String is a primary data type.",
+        "None of the above."
       ],
       [
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!"
+        "Variables defined inside methods, constructors or blocks are called local variables.",
+        "Variables defined outside methods, constructors or blocks are called local variables.",
+        "Static variables defined outside methods, constructors or blocks are called local variables.",
+        "None of the above."
       ],
+      ["type", "object", "Both", "None"],
       [
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!"
-      ],
-      [
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!"
-      ],
-      [
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!"
+        "Serialization is the process of writing the state of an object to another object.",
+        "Serialization is the process of writing the state of an object to a byte stream.",
+        "Both",
+        "None"
       ]
     ],
-    "correct": [0, 1, 0, 2, 3],
+    "correct": [1, 2, 0, 1, 1],
     "hardness": 2
   },
 
@@ -184,180 +134,130 @@
     "id": 4,
     "title": "JavaScript",
     "questions": [
-      "What is closure?",
-      "What is better func expression or func declaration?",
-      "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-      "Repellat accusantium non vel voluptatibus facere nihil eos!",
-      "Repellat accusantium non vel voluptatibus modi qui quos quisquam aspernatur deleniti saepe eum quod!"
+      "Inside which HTML element do we put the JavaScript?",
+      "What is the correct JavaScript syntax to change the content of the HTML element below? \n <p id=\"demo\">This is a demonstration.</p>",
+      "Where is the correct place to insert a JavaScript?",
+      "What is the correct syntax for referring to an external script called \"xxx.js\"?",
+      "How do you write \"Hello World\" in an alert box?"
     ],
     "answers": [
+      ["<javascript/>", "<script/>", "<js/>", "<scripting/>"],
       [
-        "A closure is the combination of a function and the lexical environment within which that function was declared.",
-        "A closure is the combination of a function and the lexical environment within which that function was declared.",
-        "A closure is the combination of a function and the lexical environment within which that function was declared.",
-        "A closure is the combination of a function and the lexical environment within which that function was declared."
+        " document.getElement(\"p\").innerHTML = \"Hello World!\";",
+        " document.getElementById(\"demo\").innerHTML = \"Hello World!\";",
+        " #demo.innerHTML = \"Hello World!\";",
+        " document.getElementByName(\"p\").innerHTML = \"Hello World!\";"
       ],
       [
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!"
+        " The <body> section",
+        " Both the <head> section and the <body> section are correct",
+        " The <head> section",
+        "None above"
       ],
       [
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!"
+        " <script name=\"xxx.js\">",
+        " <script src=\"xxx.js\">",
+        " <script href=\"xxx.js\">",
+        " <script file=\"xxx.js\">"
       ],
       [
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!"
-      ],
-      [
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!"
+        " msg(\"Hello World\");",
+        " alert(\"Hello World\");",
+        " msgBox(\"Hello World\");",
+        " alertBox(\"Hello World\");"
       ]
     ],
-    "correct": [0, 1, 0, 2, 3],
+    "correct": [1, 1, 1, 1, 1],
     "hardness": 0
   },
   {
     "id": 5,
     "title": "C++",
     "questions": [
-      "What is closure?",
-      "What is better func expression or func declaration?",
-      "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-      "Repellat accusantium non vel voluptatibus facere nihil eos!",
-      "Repellat accusantium non vel voluptatibus modi qui quos quisquam aspernatur deleniti saepe eum quod!"
+      "Which is the storage specifier used to modify the member variable even though the class object is a constant object?",
+      "Objects created using new operator are stored in __ memory.",
+      "With respective to streams >> (operator) is called as",
+      "I) Exception handling technically provides multi branching.\n II) Exception handling can be mimicked using ‘goto’ construct.",
+      "Identify the C++ compiler of Linux"
     ],
     "answers": [
+      ["auto", "register", "static", "mutable"],
+      ["Cache", "Heap", "Stack", "None above"],
       [
-        "A closure is the combination of a function and the lexical environment within which that function was declared.",
-        "A closure is the combination of a function and the lexical environment within which that function was declared.",
-        "A closure is the combination of a function and the lexical environment within which that function was declared.",
-        "A closure is the combination of a function and the lexical environment within which that function was declared."
+        "Insertion operator",
+        "Extraction  operator",
+        "Right shift  operator",
+        "Left shift  operator"
       ],
-      [
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!"
-      ],
-      [
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!"
-      ],
-      [
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!"
-      ],
-      [
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!"
-      ]
+      ["I", "II", "Both", "None"],
+      ["cpp", "g++", "Borland", "vc++"]
     ],
-    "correct": [0, 1, 0, 2, 3],
+    "correct": [3, 1, 1, 0, 1],
     "hardness": 1
   },
   {
     "id": 6,
     "title": "C#",
     "questions": [
-      "What is closure?",
-      "What is better func expression or func declaration?",
-      "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-      "Repellat accusantium non vel voluptatibus facere nihil eos!",
-      "Repellat accusantium non vel voluptatibus modi qui quos quisquam aspernatur deleniti saepe eum quod!"
+      "Which of the following is correct about variable naming conventions in C#?",
+      "Which of the following defines boxing correctly?",
+      "Which of the following converts a type to a 64-bit integer in C#?",
+      "Which of the following converts a type to an unsigned big type in C#?",
+      "Which of the following access specifier in C# allows a class to expose its member variables and member functions to other functions and objects?"
     ],
     "answers": [
       [
-        "A closure is the combination of a function and the lexical environment within which that function was declared.",
-        "A closure is the combination of a function and the lexical environment within which that function was declared.",
-        "A closure is the combination of a function and the lexical environment within which that function was declared.",
-        "A closure is the combination of a function and the lexical environment within which that function was declared."
+        "It should not be a C# keyword.",
+        "It must not contain any embedded space or symbol such as? - + ! @ # % ^ & * ( ) [ ] { } ",
+        "Both of the above. ",
+        "None of the above."
       ],
       [
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!"
+        "When a value type is converted to object type, it is called boxing.",
+        "When an object type is converted to a value type, it is called boxing.",
+        "Both of the above. ",
+        "None of the above. "
       ],
-      [
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!"
-      ],
-      [
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!"
-      ],
-      [
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!"
-      ]
+      ["ToInt64", "ToSbyte ", "ToSingle ", "ToInt32 "],
+      ["ToType", "ToUInt16 ", "ToUInt32", "ToUInt64 "],
+      ["Public", "Private", "Protected", "Internal"]
     ],
-    "correct": [0, 1, 0, 2, 3],
-    "hardness": 0
+    "correct": [2, 0, 0, 3, 0],
+    "hardness": 1
   },
   {
     "id": 7,
     "title": "Java",
     "questions": [
-      "What is closure?",
-      "What is better func expression or func declaration?",
-      "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-      "Repellat accusantium non vel voluptatibus facere nihil eos!",
-      "Repellat accusantium non vel voluptatibus modi qui quos quisquam aspernatur deleniti saepe eum quod!"
+      "What is the default value of float variable?",
+      "Which of the following is false about String?",
+      "What is local variable?",
+      "Dynamic binding uses which information for binding?",
+      "What is Serialization?"
     ],
     "answers": [
+      ["0.0d", "0.0f", "0", "not defined"],
       [
-        "A closure is the combination of a function and the lexical environment within which that function was declared.",
-        "A closure is the combination of a function and the lexical environment within which that function was declared.",
-        "A closure is the combination of a function and the lexical environment within which that function was declared.",
-        "A closure is the combination of a function and the lexical environment within which that function was declared."
+        "String is immutable.",
+        "String can be created using new operator.",
+        "String is a primary data type.",
+        "None of the above."
       ],
       [
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!"
+        "Variables defined inside methods, constructors or blocks are called local variables.",
+        "Variables defined outside methods, constructors or blocks are called local variables.",
+        "Static variables defined outside methods, constructors or blocks are called local variables.",
+        "None of the above."
       ],
+      ["type", "object", "Both", "None"],
       [
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!"
-      ],
-      [
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!"
-      ],
-      [
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!"
+        "Serialization is the process of writing the state of an object to another object.",
+        "Serialization is the process of writing the state of an object to a byte stream.",
+        "Both",
+        "None"
       ]
     ],
-    "correct": [0, 1, 0, 2, 3],
+    "correct": [1, 2, 0, 1, 1],
     "hardness": 2
   },
 
@@ -365,180 +265,130 @@
     "id": 8,
     "title": "JavaScript",
     "questions": [
-      "What is closure?",
-      "What is better func expression or func declaration?",
-      "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-      "Repellat accusantium non vel voluptatibus facere nihil eos!",
-      "Repellat accusantium non vel voluptatibus modi qui quos quisquam aspernatur deleniti saepe eum quod!"
+      "Inside which HTML element do we put the JavaScript?",
+      "What is the correct JavaScript syntax to change the content of the HTML element below? \n <p id=\"demo\">This is a demonstration.</p>",
+      "Where is the correct place to insert a JavaScript?",
+      "What is the correct syntax for referring to an external script called \"xxx.js\"?",
+      "How do you write \"Hello World\" in an alert box?"
     ],
     "answers": [
+      ["<javascript/>", "<script/>", "<js/>", "<scripting/>"],
       [
-        "A closure is the combination of a function and the lexical environment within which that function was declared.",
-        "A closure is the combination of a function and the lexical environment within which that function was declared.",
-        "A closure is the combination of a function and the lexical environment within which that function was declared.",
-        "A closure is the combination of a function and the lexical environment within which that function was declared."
+        " document.getElement(\"p\").innerHTML = \"Hello World!\";",
+        " document.getElementById(\"demo\").innerHTML = \"Hello World!\";",
+        " #demo.innerHTML = \"Hello World!\";",
+        " document.getElementByName(\"p\").innerHTML = \"Hello World!\";"
       ],
       [
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!"
+        " The <body> section",
+        " Both the <head> section and the <body> section are correct",
+        " The <head> section",
+        "None above"
       ],
       [
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!"
+        " <script name=\"xxx.js\">",
+        " <script src=\"xxx.js\">",
+        " <script href=\"xxx.js\">",
+        " <script file=\"xxx.js\">"
       ],
       [
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!"
-      ],
-      [
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!"
+        " msg(\"Hello World\");",
+        " alert(\"Hello World\");",
+        " msgBox(\"Hello World\");",
+        " alertBox(\"Hello World\");"
       ]
     ],
-    "correct": [0, 1, 0, 2, 3],
+    "correct": [1, 1, 1, 1, 1],
     "hardness": 0
   },
   {
     "id": 9,
     "title": "C++",
     "questions": [
-      "What is closure?",
-      "What is better func expression or func declaration?",
-      "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-      "Repellat accusantium non vel voluptatibus facere nihil eos!",
-      "Repellat accusantium non vel voluptatibus modi qui quos quisquam aspernatur deleniti saepe eum quod!"
+      "Which is the storage specifier used to modify the member variable even though the class object is a constant object?",
+      "Objects created using new operator are stored in __ memory.",
+      "With respective to streams >> (operator) is called as",
+      "I) Exception handling technically provides multi branching.\n II) Exception handling can be mimicked using ‘goto’ construct.",
+      "Identify the C++ compiler of Linux"
     ],
     "answers": [
+      ["auto", "register", "static", "mutable"],
+      ["Cache", "Heap", "Stack", "None above"],
       [
-        "A closure is the combination of a function and the lexical environment within which that function was declared.",
-        "A closure is the combination of a function and the lexical environment within which that function was declared.",
-        "A closure is the combination of a function and the lexical environment within which that function was declared.",
-        "A closure is the combination of a function and the lexical environment within which that function was declared."
+        "Insertion operator",
+        "Extraction  operator",
+        "Right shift  operator",
+        "Left shift  operator"
       ],
-      [
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!"
-      ],
-      [
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!"
-      ],
-      [
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!"
-      ],
-      [
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!"
-      ]
+      ["I", "II", "Both", "None"],
+      ["cpp", "g++", "Borland", "vc++"]
     ],
-    "correct": [0, 1, 0, 2, 3],
+    "correct": [3, 1, 1, 0, 1],
     "hardness": 1
   },
   {
     "id": 10,
     "title": "C#",
     "questions": [
-      "What is closure?",
-      "What is better func expression or func declaration?",
-      "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-      "Repellat accusantium non vel voluptatibus facere nihil eos!",
-      "Repellat accusantium non vel voluptatibus modi qui quos quisquam aspernatur deleniti saepe eum quod!"
+      "Which of the following is correct about variable naming conventions in C#?",
+      "Which of the following defines boxing correctly?",
+      "Which of the following converts a type to a 64-bit integer in C#?",
+      "Which of the following converts a type to an unsigned big type in C#?",
+      "Which of the following access specifier in C# allows a class to expose its member variables and member functions to other functions and objects?"
     ],
     "answers": [
       [
-        "A closure is the combination of a function and the lexical environment within which that function was declared.",
-        "A closure is the combination of a function and the lexical environment within which that function was declared.",
-        "A closure is the combination of a function and the lexical environment within which that function was declared.",
-        "A closure is the combination of a function and the lexical environment within which that function was declared."
+        "It should not be a C# keyword.",
+        "It must not contain any embedded space or symbol such as? - + ! @ # % ^ & * ( ) [ ] { } ",
+        "Both of the above. ",
+        "None of the above."
       ],
       [
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!"
+        "When a value type is converted to object type, it is called boxing.",
+        "When an object type is converted to a value type, it is called boxing.",
+        "Both of the above. ",
+        "None of the above. "
       ],
-      [
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!"
-      ],
-      [
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!"
-      ],
-      [
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!"
-      ]
+      ["ToInt64", "ToSbyte ", "ToSingle ", "ToInt32 "],
+      ["ToType", "ToUInt16 ", "ToUInt32", "ToUInt64 "],
+      ["Public", "Private", "Protected", "Internal"]
     ],
-    "correct": [0, 1, 0, 2, 3],
-    "hardness": 0
+    "correct": [2, 0, 0, 3, 0],
+    "hardness": 1
   },
   {
     "id": 11,
     "title": "Java",
     "questions": [
-      "What is closure?",
-      "What is better func expression or func declaration?",
-      "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-      "Repellat accusantium non vel voluptatibus facere nihil eos!",
-      "Repellat accusantium non vel voluptatibus modi qui quos quisquam aspernatur deleniti saepe eum quod!"
+      "What is the default value of float variable?",
+      "Which of the following is false about String?",
+      "What is local variable?",
+      "Dynamic binding uses which information for binding?",
+      "What is Serialization?"
     ],
     "answers": [
+      ["0.0d", "0.0f", "0", "not defined"],
       [
-        "A closure is the combination of a function and the lexical environment within which that function was declared.",
-        "A closure is the combination of a function and the lexical environment within which that function was declared.",
-        "A closure is the combination of a function and the lexical environment within which that function was declared.",
-        "A closure is the combination of a function and the lexical environment within which that function was declared."
+        "String is immutable.",
+        "String can be created using new operator.",
+        "String is a primary data type.",
+        "None of the above."
       ],
       [
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!"
+        "Variables defined inside methods, constructors or blocks are called local variables.",
+        "Variables defined outside methods, constructors or blocks are called local variables.",
+        "Static variables defined outside methods, constructors or blocks are called local variables.",
+        "None of the above."
       ],
+      ["type", "object", "Both", "None"],
       [
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!"
-      ],
-      [
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!"
-      ],
-      [
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!",
-        "Repellat accusantium non vel voluptatibus facere nihil eos sapiente quaerat modi qui quos quisquam aspernatur deleniti saepe eum quod!"
+        "Serialization is the process of writing the state of an object to another object.",
+        "Serialization is the process of writing the state of an object to a byte stream.",
+        "Both",
+        "None"
       ]
     ],
-    "correct": [0, 1, 0, 2, 3],
+    "correct": [1, 2, 0, 1, 1],
     "hardness": 2
   }
 ]
