@@ -16,7 +16,7 @@ function getTests(query) {
         query.page * 10 < testList.length
       ) {
         let tests = testList.slice(query.page * 10, query.page * 10 + 10);
-        let pageAmount =
+        var pageAmount =
           ~~(testList.length / 10) + Math.sign(testList.length % 10);
         resolve({ pageAmount, tests });
       } else {
@@ -38,6 +38,52 @@ function getTestById(id) {
     });
   });
 }
+
+function isTestValid(test) {
+  let hasAllProperties =
+    "title" in test &&
+    "questions" in test &&
+    "answers" in test &&
+    "correct" in test &&
+    "hardness" in test;
+  if (!hasAllProperties) return false;
+  const { questions, answers } = test;
+  let propertiesAreValid =
+    questions.length > 0 &&
+    answers.length > 0 &&
+    answers.every(answer => answer.length > 0);
+  if (hasAllProperties && propertiesAreValid) return true;
+  return false;
+}
+
+async function addTest(newtest) {
+  let length = await getTestAmount();
+  if (isTestValid(newtest)) {
+    newtest["id"] = length;
+    return new Promise((resolve, reject) => {
+      fs.appendFile("./tests.json", JSON.stringify(newtest), function(
+        err,
+        data
+      ) {
+        if (err) reject(err);
+        resolve("Successfully added.");
+      });
+    });
+  } else {
+    return Promise.reject("Not valid test.");
+  }
+}
+
+function getTestAmount() {
+  return new Promise((resolve, reject) => {
+    fs.readFile("./tests.json", "utf8", function(err, data) {
+      if (err) reject(err);
+      let newData = JSON.parse(data);
+      resolve(newData.length);
+    });
+  });
+}
+
 async function recordNewTestCompletion(testId, token, amountCorrect, time) {
   const decoded = await jwt.decode(token, TOKEN_PRIVATE_KEY);
   addUserTest(decoded.userMail, testId, amountCorrect, time);
@@ -57,4 +103,4 @@ async function checkTestAnswers(testId, token, userAnswers, time) {
   }
 }
 
-module.exports = { getTests, getTestById, checkTestAnswers };
+module.exports = { getTests, getTestById, checkTestAnswers, addTest };

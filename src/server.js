@@ -4,7 +4,8 @@ const { cors, express, bodyParser } = require("./utils/modulesManager");
 const {
   getTests,
   checkTestAnswers,
-  getTestById
+  getTestById,
+  addTest
 } = require("./modules/services/tests.service");
 const {
   registerUser,
@@ -39,7 +40,6 @@ app.post("/users/info", async (req, res) => {
 
 app.post("/users/", async (req, res) => {
   console.log('app.post("/users/:id", (req, res) => {');
-
   try {
     let result = await getFullUserInfo(req.body.token);
     console.log(result);
@@ -118,8 +118,13 @@ app.post("/tests/:id", async (req, res) => {
 });
 
 app.post("/tests", async (req, res) => {
-  console.log('app.post("/tests"', req.body);
-  res.status(200).send("OK");
+  console.log('app.post("/tests"');
+  try {
+    // let result = await addTest(req.body);
+    res.status(200).send("OK");
+  } catch (error) {
+    res.status(400).send(error);
+  }
 });
 
 app.get("/tests", async (req, res) => {
