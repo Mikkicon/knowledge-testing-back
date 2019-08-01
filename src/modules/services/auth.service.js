@@ -125,6 +125,15 @@ async function changeCredentials(token, body) {
   }
 }
 
+async function getUserInfo(token) {
+  const verifiedToken = jwt.verify(token, TOKEN_PRIVATE_KEY);
+  console.log(verifiedToken);
+  if (typeof verifiedToken === "object") {
+    const userInfo = await getUserByMail(verifiedToken.userMail);
+    return userInfo;
+  }
+  return "JWT wasn't verified";
+}
 async function getFullUserInfo(token) {
   const verifiedToken = jwt.verify(token, TOKEN_PRIVATE_KEY);
   console.log(verifiedToken);
@@ -142,5 +151,6 @@ module.exports = {
   transporter,
   mailOptions,
   changeCredentials,
-  getFullUserInfo
+  getFullUserInfo,
+  getUserInfo
 };

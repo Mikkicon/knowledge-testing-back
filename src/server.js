@@ -10,7 +10,8 @@ const {
   registerUser,
   loginUser,
   getFullUserInfo,
-  changeCredentials
+  changeCredentials,
+  getUserInfo
 } = require("./modules/services/auth.service");
 const { initDB } = require("./utils/db.util");
 const { PORT } = require("./constants");
@@ -27,19 +28,17 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // app.all("/users/:id", isAuthorised);
 
 // ----------------USER----------------
-app.get("/users/", async (req, res) => {
+
+app.post("/users/info", async (req, res) => {
   console.log('app.get("/users/"');
-  getUsers((err, result) => {
-    if (err) {
-      res.status(400).send(err);
-    } else {
-      res.status(200).send(result);
-    }
-  });
+  if (req.body.token) {
+    let [userInfo] = await getUserInfo(req.body.token);
+    res.send(userInfo);
+  }
 });
 
 app.post("/users/", async (req, res) => {
-  console.log('app.get("/users/:id", (req, res) => {');
+  console.log('app.post("/users/:id", (req, res) => {');
 
   try {
     let result = await getFullUserInfo(req.body.token);
