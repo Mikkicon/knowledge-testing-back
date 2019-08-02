@@ -43,7 +43,10 @@ async function loginUser({ mail, pass }) {
     if (isAuth) {
       console.log("ISAUTH: ", isAuth);
       var token = jwt.sign({ userMail: mail }, TOKEN_PRIVATE_KEY);
-      return mail, token;
+      var [{ login }, ...rest] = await getUserByMail(mail);
+      // console.log("user[0].login", user[0].login);
+
+      return { login, token };
     } else {
       console.log("No such user in DB");
       return false;

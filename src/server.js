@@ -84,11 +84,10 @@ app.post("/register", async (req, res) => {
 app.post("/login", async (req, res) => {
   console.log('app.post("/login"');
   try {
-    let mail,
-      token = await loginUser(req.body);
-    console.log(token);
-    if (token) {
-      res.status(200).send(JSON.stringify({ mail, token }));
+    let { login, token } = await loginUser(req.body);
+    if (token && login) {
+      console.log(token, login);
+      res.status(200).send(JSON.stringify({ login, token }));
     } else {
       res.status(400).send("Wrong credentials");
     }
@@ -156,5 +155,5 @@ app.get("/tests/:id", async (req, res) => {
     password: "rootbeer",
     db: "knowledgeTesting"
   });
-  app.listen(PORT, "localhost", () => console.log("Listening"));
+  app.listen(PORT);
 })();

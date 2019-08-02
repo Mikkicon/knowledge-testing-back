@@ -20,7 +20,7 @@ function getTests(query) {
           ~~(testList.length / 10) + Math.sign(testList.length % 10);
         resolve({ pageAmount, tests });
       } else {
-        resolve({ pageAmount, testList });
+        resolve({ pageAmount, tests });
       }
     });
   });

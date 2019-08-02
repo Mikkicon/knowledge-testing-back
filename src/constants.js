@@ -3,5 +3,5 @@ module.exports = {
   PORT: 3000,
   MAIL_REGISTER_SUBJECT: "Password for Unitest",
   TOKEN_PRIVATE_KEY: "wuewieuwieuriwudjghhhhuuwi",
-  SEND_MAILS: false
+  SEND_MAILS: true
 };
